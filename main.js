@@ -23,3 +23,25 @@ function getStudent() {
     getStudent();
   }
 }
+
+function getMentor() {
+  var name = prompt('What is the mentor\'s name?');
+  var number = prompt('What is the mentor\'s phone #?');
+  var city = prompt('In what city does this mentor currently live?');
+
+  var mentorInfo = {
+    name: '',
+    number: '',
+    city: ''
+  };
+
+  mentorInfo.name = name;
+  mentorInfo.number = number;
+  mentorInfo.city = city;
+  mentors.push(mentorInfo);
+
+  var newMentor = prompt('Do you want to add another mentor?');
+  if (newMentor.toLowerCase() === 'yes') {
+    getMentor();
+  }
+}
