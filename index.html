@@ -3,17 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>js-match-maker</title>
-    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <header>
       <h1>JS Students &amp; Mentors</h1>
     </header>
-    <section id="team-list">
-      <!-- button will generate list when new peope are added -->
-      <ul class="students">
+    <section class="left">
+      <button id="get_student">Get students</button>
+      <ul id="student">
+        <li>Name: Test name<br>
+            Phone: 123-124-5353<br>
+            City: Denver
+        </li>
       </ul>
-      <button id="get-student">
-
+    </section>
+    <section class="right">
+      <button id="get_mentor">Get mentors</button>
+      <ul id="mentors">
+        <li>Name: Test name<br>
+            Phone: 123-124-5353<br>
+            City: Denver
+        </li>
+      </ul>
+    </section>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
+

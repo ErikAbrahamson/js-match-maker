@@ -1,0 +1,35 @@
+body {
+  width: 100%;
+}
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1em;
+}
+section {
+  text-align: center;
+}
+ul {
+  margin: 1em;
+}
+ul li {
+  list-style-type: none;
+  text-align: left;
+}
+button {
+  position: relative;
+  padding: 8px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100px;
+}
+.left {
+  display: inline-block;
+  float: left;
+  width: 50%;
+}
+.right {
+  display: inline-block;
+  float: right;
+  width: 50%;
+}

@@ -1,28 +1,27 @@
 console.log('sanity check!');
-// Init both student and mentor object array
 var students = [], mentors = [];
-// Pushes new student data to student object array
+
 function getStudent() {
   var name = prompt('What is the student\'s name?');
   var number = prompt('What is the student\'s phone #?');
   var city = prompt('In what city does this student currently live?');
   city.toLowerCase();
-// Creates keys to store student values
-  var studentInfo = {
-    name: '',
-    number: '',
-    city: ''
-  };
+
+  var studentInfo = {};
 
   studentInfo.name = name;
   studentInfo.number = number;
   studentInfo.city = city;
+
   students.push(studentInfo);
 
-  var newStudent = prompt('Do you want to add another student?');
-  if (newStudent.toLowerCase() === 'yes') {
-    getStudent();
-  }
+  var studentList = document.getElementById('student');
+  var node = document.createElement('li');
+  var textnode = document.createTextNode('Name: ' + students[0].name + '\n' + 'City: ' + students[0].city + '\n' + 'Number: ' + students[0].number);
+
+  node.appendChild(textnode);
+  studentList.appendChild(node);
+
 }
 
 function getMentor() {
@@ -30,25 +29,16 @@ function getMentor() {
   var number = prompt('What is the mentor\'s phone #?');
   var city = prompt('In what city does this mentor currently live?');
   city.toLowerCase();
-
-  var mentorInfo = {
-    name: '',
-    number: '',
-    city: ''
-  };
-
+  var mentorInfo = {};
   mentorInfo.name = name;
   mentorInfo.number = number;
   mentorInfo.city = city;
   mentors.push(mentorInfo);
-
   var newMentor = prompt('Do you want to add another mentor?');
   if (newMentor.toLowerCase() === 'yes') {
     getMentor();
   }
 }
-// City list
-
 function getCity() {
   var city = prompt('Please enter a city name to display all mentors in that city.');
 
@@ -62,3 +52,11 @@ function getCity() {
     }
   }
 }
+
+document.getElementById('get_student').addEventListener('click', function(event) {
+  getStudent();
+});
+
+document.getElementById('get_mentor').addEventListener('click', function(event) {
+  getMentor();
+});
