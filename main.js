@@ -1,5 +1,6 @@
 console.log('sanity check!');
 var students = [], mentors = [];
+var li = document.createElement('li');
 
 function getStudent() {
   var name = prompt('What is the student\'s name?');
@@ -15,13 +16,18 @@ function getStudent() {
 
   students.push(studentInfo);
 
+  var last = students.length - 1;
   var studentList = document.getElementById('student');
-  var node = document.createElement('li');
-  var textnode = document.createTextNode('Name: ' + students[0].name + '\n' + 'City: ' + students[0].city + '\n' + 'Number: ' + students[0].number);
 
-  node.appendChild(textnode);
-  studentList.appendChild(node);
+  var textnode = document.createTextNode('Name: ' + students[last].name + '  ' + 'City: ' + students[last].city + '  ' + 'Number: ' + students[last].number);
 
+  li.appendChild(textnode);
+  studentList.appendChild(li);
+
+  var newStudent = prompt('Do you want to add another student?');
+  if (newStudent.toLowerCase() === 'yes') {
+    getStudent();
+  }
 }
 
 function getMentor() {
@@ -29,30 +35,28 @@ function getMentor() {
   var number = prompt('What is the mentor\'s phone #?');
   var city = prompt('In what city does this mentor currently live?');
   city.toLowerCase();
+
   var mentorInfo = {};
+
   mentorInfo.name = name;
   mentorInfo.number = number;
   mentorInfo.city = city;
+
   mentors.push(mentorInfo);
+
+  var last = mentors.length - 1;
+  var mentorList = document.getElementById('mentor');
+  var textnode = document.createTextNode('Name: ' + mentors[last].name + '  ' + 'City: ' + mentors[last].city + '  ' + 'Number: ' + mentors[last].number);
+
+  li.appendChild(textnode);
+  mentorList.appendChild(li);
+
   var newMentor = prompt('Do you want to add another mentor?');
   if (newMentor.toLowerCase() === 'yes') {
     getMentor();
   }
 }
-function getCity() {
-  var city = prompt('Please enter a city name to display all mentors in that city.');
-
-  for (var i = 0; i < mentors.length; i++) {
-    if (city.toLowerCase() === mentors[i]['city']) {
-      for (mentors in mentors[i]['city']) {
-        alert(mentors[i]['name']);
-      }
-    } else {
-      alert('Sorry, there are no mentors in that city at this time.');
-    }
-  }
-}
-
+// Event Listeneres
 document.getElementById('get_student').addEventListener('click', function(event) {
   getStudent();
 });
