@@ -1,6 +1,5 @@
 console.log('sanity check!');
 var students = [], mentors = [];
-var li = document.createElement('li');
 
 function getStudent() {
   var name = prompt('What is the student\'s name?');
@@ -16,6 +15,7 @@ function getStudent() {
 
   students.push(studentInfo);
 
+  var li = document.createElement('li');
   var last = students.length - 1;
   var studentList = document.getElementById('student');
 
@@ -44,6 +44,7 @@ function getMentor() {
 
   mentors.push(mentorInfo);
 
+  var li = document.createElement('li');
   var last = mentors.length - 1;
   var mentorList = document.getElementById('mentor');
   var textnode = document.createTextNode('Name: ' + mentors[last].name + '  ' + 'City: ' + mentors[last].city + '  ' + 'Number: ' + mentors[last].number);
