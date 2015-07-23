@@ -19,7 +19,7 @@ function getStudent() {
   var last = students.length - 1;
   var studentList = document.getElementById('student');
 
-  var textnode = document.createTextNode('Name: ' + students[last].name + '  ' + 'City: ' + students[last].city + '  ' + 'Number: ' + students[last].number);
+  var textnode = document.createTextNode('Name: ' + students[last].name + '\n' + 'City: ' + students[last].city + '' + 'Number: ' + students[last].number);
 
   li.appendChild(textnode);
   studentList.appendChild(li);
@@ -57,7 +57,8 @@ function getMentor() {
     getMentor();
   }
 }
-// Event Listeneres
+
+// Event Listeners
 document.getElementById('get_student').addEventListener('click', function(event) {
   getStudent();
 });
@@ -65,3 +66,15 @@ document.getElementById('get_student').addEventListener('click', function(event)
 document.getElementById('get_mentor').addEventListener('click', function(event) {
   getMentor();
 });
+
+//Setting attributes and styles
+var studentStyle = document.getElementsByTagName('ul')[0];
+var mentorStyle = document.getElementsByTagName('ul')[1];
+
+
+
+
+
+
+
+

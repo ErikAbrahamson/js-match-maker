@@ -15,7 +15,7 @@ ul {
 ul li {
   list-style-type: none;
   text-align: left;
-  line-height: 1em;
+  line-height: 1.5em;
 }
 button {
   position: relative;
